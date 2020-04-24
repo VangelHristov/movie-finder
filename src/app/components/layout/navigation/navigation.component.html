@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="home" routerLinkActive="active">Movie Finder</a>
+    <button (click)="toggle()"
+            [attr.aria-expanded]="!isCollapsed"
+            class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div [ngClass]="isCollapsed? 'collapse navbar-collapse': 'expand navbar-collapse'" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="popular">Most Popular</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="in-theaters">In Theaters</a>
+            </li>
+        </ul>
+        <app-search></app-search>
+    </div>
+</nav>

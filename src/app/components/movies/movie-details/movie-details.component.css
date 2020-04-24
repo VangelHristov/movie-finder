@@ -1,0 +1,48 @@
+.background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: invert(20%) contrast(185%) grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -2;
+}
+
+.overlay {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(20.78%, 15.69%, 11.76%, 0.98) 0%, rgba(27.45%, 22.75%, 19.22%, 0.88) 100%);
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    background: transparent;
+}
+
+section {
+    position: relative;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-yellow {
+    color: #ff0;
+}
+
+.m-1 {
+    margin: 10px;
+}
+
+.mt-2 {
+    margin-top: 2em;
+}

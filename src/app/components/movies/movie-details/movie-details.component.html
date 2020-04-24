@@ -1,0 +1,48 @@
+<section>
+    <ng-template #notApplicable>N/A</ng-template>
+    <div class="background-image" [style.backgroundImage]="'url('+ movieDetails.backdrop_path +')'">
+        <div class="overlay"></div>
+    </div>
+    <div class="row py-5 text-center">
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-3">
+            <img [src]="movieDetails.poster_path" alt="poster">
+            <app-rating [vote]="movieDetails.vote"></app-rating>
+        </div>
+        <div class="col-lg-3 text-white container text-center">
+            <h2>{{movieDetails.title}}
+                <span class="text-muted">
+                    ({{movieDetails.release_date.substring(0, 4)}})
+                </span>
+            </h2>
+            <div class="text-justify">{{movieDetails.overview}}</div>
+            <hr>
+            <div class="text-yellow mt-2">
+                <div class="text-center">Genres:</div>
+                <span *ngFor="let genre of movieDetails.genres" class="m-1">{{genre}}</span>
+            </div>
+            <hr>
+            <div>
+                <div class="m-1">
+                    Runtime: <span *ngIf="movieDetails.runtime; else notApplicable">
+                    {{movieDetails.runtime}} min.</span>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="m-1">Budget: {{movieDetails.budget|money}}</div>
+                <div class="m-1">Revenue: {{movieDetails.revenue|money}}</div>
+            </div>
+            <hr>
+            <div>
+                <div class="tex-center">Languages:</div>
+                <span class="m-1" *ngFor="let lang of movieDetails.languages">{{lang}}</span>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <hr>
+    <app-trailers [trailers]="trailers"></app-trailers>
+</section>

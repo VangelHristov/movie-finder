@@ -1,0 +1,20 @@
+<form class="my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="search($event)">
+    <label for="search" class="d-none">Search movie database</label>
+    <input id="search" class="form-control mr-sm-2 w-100" type="text" placeholder="Search"
+           (keyup)="search($event)"
+           formControlName="searchField">
+    <div id="search-result" *ngIf="searchField.value.length">
+        <ng-template #noResult class="list-group">
+            <a class="list-item">Nothing found</a>
+        </ng-template>
+        <div *ngIf="searchResults.length; else noResult">
+            <div class="list-group" *ngFor="let result of searchResults">
+                <a class="list-group-item list-group-item-action active"
+                   [routerLink]="'movies/' + result.id"
+                   (click)="emptyResults()">
+                    {{result.title}}
+                </a>
+            </div>
+        </div>
+    </div>
+</form>

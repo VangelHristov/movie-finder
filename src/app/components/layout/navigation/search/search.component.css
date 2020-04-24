@@ -1,0 +1,10 @@
+form {
+    position: relative;
+    width: 100%;
+    min-width: 350px;
+}
+
+#search-result {
+    position: absolute;
+    width: 100%;
+}

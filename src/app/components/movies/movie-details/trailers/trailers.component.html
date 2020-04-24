@@ -1,0 +1,11 @@
+<div class="container" *ngIf="trailers.length">
+    <h2 class="text-white text-center">Trailers</h2>
+    <hr>
+    <div class="row justify-content-center">
+        <iframe *ngFor="let trailer of trailers"
+                class="col-md-4 "
+                [src]="sanitizer.bypassSecurityTrustResourceUrl(trailer.key)"
+                allow="encrypted-media"
+                allowfullscreen></iframe>
+    </div>
+</div>
